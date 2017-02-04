@@ -1,4 +1,6 @@
-Minimal Typescript + React + Webpack2 with Hot Module Reloading site. (No CSS support)
+Minimal Typescript + React + Webpack2 with Hot Module Reloading site
+====================================================================
+
 ```
 yarn install
 npm install -g webpack webpack-dev-server
@@ -6,8 +8,11 @@ npm install -g webpack webpack-dev-server
 webpack-dev-server
 ```
 
-There is currently no production webpack config, probably do something like:
+Building for production
+=======================
 
-Remove `new webpack.HotModuleReplacementPlugin(),`.
-
-Change `react` + `react-dom` to be webpack externals
+```
+webpack --config webpack.prod.config.js
+```
+You probably want to change `react` + `react-dom` to be webpack externals so they don't get built in too.
+You also probably want to add uglify to the build process.
