@@ -21,7 +21,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.(ts|tsx)$/,
-				loader: 'ts-loader'
+				loader: 'react-hot-loader/webpack!ts-loader'
 			},
 			{
 				test: /\.css$/,
@@ -38,7 +38,8 @@ module.exports = {
 		})
 	],
 	devServer: {
-		hot: true,
-		hotOnly: true
+		hot: true
+		//Enable this if you want to never refresh (this allows hot-reloading app.tsx, but won't auto-refresh if you change index.tsx)
+		//hotOnly: true
 	}
 };

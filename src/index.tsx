@@ -25,7 +25,4 @@ if (module.hot) {
             document.getElementById('root')
         );
     });
-    module.hot.accept('./index', () => {
-        console.log("hot accepting index trolo !!!!!!!!!!!!!!!!!!");
-    })
 }

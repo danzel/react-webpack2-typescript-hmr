@@ -1,10 +1,24 @@
 import * as React from 'react';
 
-class Kid extends React.Component<{}, {}> {
+interface KidState {
+    count: number;
+}
+class Kid extends React.Component<{}, KidState> {
+    constructor() {
+        super();
+
+        this.state = {
+            count: 0
+        };
+
+        setInterval(() => {
+            this.setState({ count: this.state.count + 1 });
+        }, 1000);
+    }
     render() {
         return (
             <div>
-                Kid234556zzjjf7666
+                Kid {this.state.count}
             </div>
         );
     }
