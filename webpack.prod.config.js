@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require("path");
 
 module.exports = {
-	devtool: 'cheap-module-source-map',
+	devtool: 'source-map',
 	entry: [
 		'./index.tsx'
 	],
@@ -30,10 +30,30 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify('production')
+			}
+		}),
 		new ExtractTextPlugin("[name].[contenthash:8].css"),
 		new HtmlWebpackPlugin({
 			inject: true,
 			template: 'index.html'
+		}),
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+			compress: {
+				screw_ie8: true, // React doesn't support IE8
+				warnings: false
+			},
+			mangle: {
+				screw_ie8: true
+			},
+			output: {
+				comments: false,
+				screw_ie8: true
+			}
 		}),
 	]
 };
