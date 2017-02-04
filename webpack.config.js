@@ -22,7 +22,11 @@ module.exports = {
 			{
 				test: /\.(ts|tsx)$/,
 				loader: 'ts-loader'
-			}
+			},
+			{
+				test: /\.css$/,
+				loader: 'style-loader!css-loader'
+			},
 		]
 	},
 	plugins: [
