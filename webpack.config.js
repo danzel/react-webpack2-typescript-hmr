@@ -21,11 +21,11 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.(ts|tsx)$/,
-				loader: 'react-hot-loader/webpack!ts-loader'
+				loader: ['react-hot-loader/webpack', 'ts-loader']
 			},
 			{
 				test: /\.css$/,
-				loader: 'style-loader!css-loader'
+				loader: ['style-loader', 'css-loader']
 			},
 		]
 	},
