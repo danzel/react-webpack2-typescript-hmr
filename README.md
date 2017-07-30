@@ -3,9 +3,8 @@ Minimal Typescript + React + Webpack2 with Hot Module Reloading site
 
 ```
 yarn install
-npm install -g webpack webpack-dev-server
 
-webpack-dev-server
+yarn start
 ```
 
 Building for production
